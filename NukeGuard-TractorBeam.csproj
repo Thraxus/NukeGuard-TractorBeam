@@ -111,12 +111,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\ControlAction.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\ChatMessages.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageBase.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\Messaging.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Settings\Settings.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\TractorBeamTurret.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\AttractorWeaponInfo.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\BaseControl.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Utilities\Log.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Utilities\LSELogger.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\MaxSlider.cs" />
-    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageBase.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\OrigMessageBase.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageClientConnected.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageConfig.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageContainer.cs" />
@@ -129,6 +134,8 @@
     <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\Slider.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\SliderAction.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\StrengthSlider.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Utilities\Profiler.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Utilities\Queue.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\Utilities\TractorBeamManager.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\NetworkSessionTractorBeam.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\TractorUI.cs" />

@@ -16,7 +16,7 @@ namespace NukeGuard_TractorBeam.TractorBeams.Networking
 		public static readonly ushort MessageId = 5402;
 		static readonly int MaxMessageSize = 4096;
 
-		public static void SendMessageToServer(MessageBase message)
+		public static void SendMessageToServer(OrigMessageBase message)
 		{
 			message.Side = MessageSide.ServerSide;
 			if (MyAPIGateway.Session.Player != null)
@@ -34,7 +34,7 @@ namespace NukeGuard_TractorBeam.TractorBeams.Networking
 		/// Creates and sends an entity with the given information for the server and all players.
 		/// </summary>
 		/// <param name="content"></param>
-		public static void SendMessageToAll(MessageBase message, bool syncAll = true)
+		public static void SendMessageToAll(OrigMessageBase message, bool syncAll = true)
 		{
 			if (MyAPIGateway.Session.Player != null)
 				message.SenderSteamId = MyAPIGateway.Session.Player.SteamUserId;
@@ -46,7 +46,7 @@ namespace NukeGuard_TractorBeam.TractorBeams.Networking
 			SendMessageToAllPlayers(message);
 		}
 
-		public static void SendMessageToAllPlayers(MessageBase messageContainer)
+		public static void SendMessageToAllPlayers(OrigMessageBase messageContainer)
 		{
 			//MyAPIGateway.Multiplayer.SendMessageToOthers(StandardClientId, System.Text.Encoding.Unicode.GetBytes(ConvertData(content))); <- does not work as expected ... so it doesn't work at all?
 			List<IMyPlayer> players = new List<IMyPlayer>();
@@ -57,7 +57,7 @@ namespace NukeGuard_TractorBeam.TractorBeams.Networking
 			}
 		}
 
-		public static void SendMessageToPlayer(ulong steamId, MessageBase message)
+		public static void SendMessageToPlayer(ulong steamId, OrigMessageBase message)
 		{
 			message.Side = MessageSide.ClientSide;
 			string xml = MyAPIGateway.Utilities.SerializeToXML(new MessageContainer() { Content = message });

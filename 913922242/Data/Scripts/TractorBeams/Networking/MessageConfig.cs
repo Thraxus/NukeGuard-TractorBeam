@@ -7,7 +7,7 @@ using VRage.ModAPI;
 namespace NukeGuard_TractorBeam.TractorBeams.Networking
 {
 	[ProtoContract]
-	public class MessageConfig : MessageBase
+	public class MessageConfig : OrigMessageBase
 	{
 		[ProtoMember(1)]
 		public long EntityId;
@@ -40,7 +40,7 @@ namespace NukeGuard_TractorBeam.TractorBeams.Networking
 			IMyEntity block;
 			if (MyAPIGateway.Entities.TryGetEntityById(EntityId, out block))
 			{
-				TractorBeamTurret traction = block.GameLogic.GetAs<TractorBeamTurret>();
+				TractorBeamCore traction = block.GameLogic.GetAs<TractorBeamCore>();
 
 				traction.Ui.MinSlider.SetterNoCheck((IMyTerminalBlock)block, Min);
 				traction.Ui.MaxSlider.SetterNoCheck((IMyTerminalBlock)block, Max);

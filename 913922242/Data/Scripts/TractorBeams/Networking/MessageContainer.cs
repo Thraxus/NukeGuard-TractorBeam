@@ -9,6 +9,6 @@ namespace NukeGuard_TractorBeam.TractorBeams.Networking
 	public class MessageContainer
 	{
 		[ProtoMember(1)]
-		public MessageBase Content;
+		public OrigMessageBase Content;
 	}
 }

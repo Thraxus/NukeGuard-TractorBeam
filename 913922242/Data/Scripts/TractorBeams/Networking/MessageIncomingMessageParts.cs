@@ -4,7 +4,7 @@ using ProtoBuf;
 namespace NukeGuard_TractorBeam.TractorBeams.Networking
 {
 	[ProtoContract]
-	public class MessageIncomingMessageParts : MessageBase
+	public class MessageIncomingMessageParts : OrigMessageBase
 	{
 		[ProtoMember(1)]
 		public byte[] Content;

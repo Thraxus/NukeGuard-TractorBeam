@@ -4,7 +4,7 @@ using Sandbox.ModAPI;
 namespace NukeGuard_TractorBeam.TractorBeams.Networking
 {
 	[ProtoContract]
-	public class MessageDebug : MessageBase
+	public class MessageDebug : OrigMessageBase
 	{
 		[ProtoMember(1)]
 		public string Text;

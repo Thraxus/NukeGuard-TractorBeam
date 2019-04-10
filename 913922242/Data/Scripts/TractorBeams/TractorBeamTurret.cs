@@ -19,14 +19,18 @@ using VRageMath;
 namespace NukeGuard_TractorBeam.TractorBeams
 {
     [MyEntityComponentDescriptor(typeof(MyObjectBuilder_LargeGatlingTurret), true, "LargeTractorBeam", "TractorBeam")]
-    public class TractorBeamTurret : MyGameLogicComponent
+    // ReSharper disable once ClassNeverInstantiated.Global
+    public class TractorBeamCore : MyGameLogicComponent
     {
-	    readonly MyDefinitionId _electricityDefinition = new MyDefinitionId(typeof(MyObjectBuilder_GasProperties), "Electricity");
+	    public static Log ProfilingLog;
+	    public static Log DebugLog;
+	    public static Log GeneralLog;
+
+		readonly MyDefinitionId _electricityDefinition = new MyDefinitionId(typeof(MyObjectBuilder_GasProperties), "Electricity");
 
         MyObjectBuilder_EntityBase _objectBuilder = null;
 
         MyEntity3DSoundEmitter _e;
-
 
         IMyCubeBlock _cubeBlock = null;
         Sandbox.ModAPI.IMyFunctionalBlock _functionalBlock = null;

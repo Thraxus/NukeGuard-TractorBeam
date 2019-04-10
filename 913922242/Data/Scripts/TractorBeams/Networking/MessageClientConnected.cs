@@ -3,7 +3,7 @@
 namespace NukeGuard_TractorBeam.TractorBeams.Networking
 {
 	[ProtoContract]
-	public class MessageClientConnected : MessageBase
+	public class MessageClientConnected : OrigMessageBase
 	{
 
 		public override void ProcessClient()
