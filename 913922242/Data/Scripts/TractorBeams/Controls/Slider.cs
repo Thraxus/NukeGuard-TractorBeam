@@ -4,20 +4,13 @@ This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 */
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Runtime.Serialization;
-using System.Runtime.InteropServices;
-using System.Collections;
-
 using Sandbox.ModAPI;
-using VRage.ObjectBuilders;
 using Sandbox.ModAPI.Interfaces.Terminal;
-using VRage.ModAPI;
 
-namespace LSE.Control
+namespace NukeGuard_TractorBeam.TractorBeams.Controls
 {
     public class Slider<T> : BaseControl<T>
     {
@@ -40,12 +33,12 @@ namespace LSE.Control
             Min = min;
             Max = max;
             Standard = standard;
-            CreateUI();
+            CreateUi();
         }
 
-        public override void OnCreateUI()
+        public override void OnCreateUi()
         {
-            var slider = MyAPIGateway.TerminalControls.CreateControl<IMyTerminalControlSlider, T>(InternalName);
+            IMyTerminalControlSlider slider = MyAPIGateway.TerminalControls.CreateControl<IMyTerminalControlSlider, T>(InternalName);
             slider.Visible = ShowControl;
             if (Log)
             {
@@ -72,7 +65,7 @@ namespace LSE.Control
         public virtual float Getter(IMyTerminalBlock block)
         {
             float value = Standard;
-            if (MyAPIGateway.Utilities.GetVariable<float>(block.EntityId.ToString() + InternalName, out value))
+            if (MyAPIGateway.Utilities.GetVariable<float>(block.EntityId + InternalName, out value))
             {
                 return value;
             }
@@ -82,7 +75,7 @@ namespace LSE.Control
         public virtual void Setter(IMyTerminalBlock block, float value)
         {
             value = Math.Max(Math.Min(value, Max), Min);
-            MyAPIGateway.Utilities.SetVariable<float>(block.EntityId.ToString() + InternalName, value);
+            MyAPIGateway.Utilities.SetVariable<float>(block.EntityId + InternalName, value);
         }
     }
 }

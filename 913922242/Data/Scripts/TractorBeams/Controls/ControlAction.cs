@@ -5,18 +5,13 @@ terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 */
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 using Sandbox.ModAPI;
-using VRage.ObjectBuilders;
 using Sandbox.ModAPI.Interfaces.Terminal;
+using VRage.ObjectBuilders;
 
-
-namespace LSE.Control
+namespace NukeGuard_TractorBeam.TractorBeams.Controls
 {
     public class ControlAction<T>
     {
@@ -34,12 +29,12 @@ namespace LSE.Control
             Definition = block.BlockDefinition;
             InternalName = internalName + Definition.SubtypeId;
 
-            var controls = new List<IMyTerminalAction>();
+            List<IMyTerminalAction> controls = new List<IMyTerminalAction>();
             MyAPIGateway.TerminalControls.GetActions<T>(out controls);
-            var control = controls.Find((x) => x.Id.ToString() == InternalName);
+            IMyTerminalAction control = controls.Find((x) => x.Id.ToString() == InternalName);
             if (control == null)
             {
-                var action = MyAPIGateway.TerminalControls.CreateAction<T>(InternalName);
+                IMyTerminalAction action = MyAPIGateway.TerminalControls.CreateAction<T>(InternalName);
                 action.Action = OnAction;
                 action.Name = new StringBuilder(Name);
                 action.Enabled = Visible;

@@ -110,15 +110,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="913922242\Data\Scripts\TractorBeams\Action.cs" />
-    <Compile Include="913922242\Data\Scripts\TractorBeams\AttractorTurret.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\ControlAction.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\TractorBeamTurret.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\AttractorWeaponInfo.cs" />
-    <Compile Include="913922242\Data\Scripts\TractorBeams\BaseControl.cs" />
-    <Compile Include="913922242\Data\Scripts\TractorBeams\LSELogger.cs" />
-    <Compile Include="913922242\Data\Scripts\TractorBeams\Properties\AssemblyInfo.cs" />
-    <Compile Include="913922242\Data\Scripts\TractorBeams\Slider.cs" />
-    <Compile Include="913922242\Data\Scripts\TractorBeams\TractorBeamManager.cs" />
-    <Compile Include="913922242\Data\Scripts\TractorBeams\TractorNetwork.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\BaseControl.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Utilities\LSELogger.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\MaxSlider.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageBase.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageClientConnected.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageConfig.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageContainer.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageDebug.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageIncomingMessageParts.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageSide.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Networking\MessageUtils.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\MinSlider.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Utilities\PlayerExtensions.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\Slider.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\SliderAction.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Controls\StrengthSlider.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\Utilities\TractorBeamManager.cs" />
+    <Compile Include="913922242\Data\Scripts\TractorBeams\NetworkSessionTractorBeam.cs" />
     <Compile Include="913922242\Data\Scripts\TractorBeams\TractorUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,5 +186,6 @@
     <None Include="913922242\Models\Cubes\Large\TractorBeamTurret_Constr2.mwm" />
     <None Include="913922242\Models\Cubes\Large\TractorBeamTurret_Constr3.mwm" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

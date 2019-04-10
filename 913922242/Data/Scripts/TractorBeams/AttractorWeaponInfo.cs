@@ -1,33 +1,31 @@
-﻿using System;
-
-namespace TractorBeam
+﻿namespace NukeGuard_TractorBeam.TractorBeams
 {
 	public class AttractorWeaponInfo
 	{
-		public float powerUsage;
-		public float damage;
+		public float PowerUsage;
+		public float Damage;
 
-		public string ammoName;
-		public int classes;
+		public string AmmoName;
+		public int Classes;
 
-		public float maxHeat;
-		public float heatPerTick;
-		public float heatDissipationPerTick;
-		public int heatDissipationDelay;
+		public float MaxHeat;
+		public float HeatPerTick;
+		public float HeatDissipationPerTick;
+		public int HeatDissipationDelay;
 		
-		public int keepAtCharge;
+		public int KeepAtCharge;
 
 		public AttractorWeaponInfo (float powerUsage, float damage, string ammoName, int classes, float maxHeat, float heatPerTick, float heatDissipationPerTick, int heatDissipationDelay, int keepAtCharge) {
 
-			this.powerUsage = powerUsage;
-			this.damage = damage;
-			this.ammoName = ammoName;
-			this.classes = classes;
-			this.maxHeat = maxHeat;
-			this.heatPerTick = heatPerTick;
-			this.heatDissipationPerTick = heatDissipationPerTick;
-			this.heatDissipationDelay = heatDissipationDelay;
-			this.keepAtCharge = keepAtCharge;
+			PowerUsage = powerUsage;
+			Damage = damage;
+			AmmoName = ammoName;
+			Classes = classes;
+			MaxHeat = maxHeat;
+			HeatPerTick = heatPerTick;
+			HeatDissipationPerTick = heatDissipationPerTick;
+			HeatDissipationDelay = heatDissipationDelay;
+			KeepAtCharge = keepAtCharge;
 		}
 	}
 	

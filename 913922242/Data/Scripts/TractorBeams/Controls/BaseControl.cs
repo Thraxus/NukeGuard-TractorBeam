@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Text;
-
+﻿using System.Collections.Generic;
 using Sandbox.ModAPI;
-using VRage.ObjectBuilders;
 using Sandbox.ModAPI.Interfaces.Terminal;
+using VRage.ObjectBuilders;
 
-namespace LSE.Control
+namespace NukeGuard_TractorBeam.TractorBeams.Controls
 {
     public class BaseControl<T>
     {
@@ -28,18 +21,18 @@ namespace LSE.Control
             Title = title;
         }
 
-        public void CreateUI()
+        public void CreateUi()
         {
-            var controls = new List<IMyTerminalControl>();
+            List<IMyTerminalControl> controls = new List<IMyTerminalControl>();
             MyAPIGateway.TerminalControls.GetControls<T>(out controls);
-            var control = controls.Find((x) => x.Id.ToString() == InternalName);
+            IMyTerminalControl control = controls.Find((x) => x.Id.ToString() == InternalName);
             if (control == null)
             {
-                OnCreateUI();
+                OnCreateUi();
             }
         }
 
-        public virtual void OnCreateUI()
+        public virtual void OnCreateUi()
         {
         }
 
